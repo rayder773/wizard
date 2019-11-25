@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("./font/HelveticaNeueCyr-Bold.woff") format("woff");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "HelveticaNeueCyr";
+    src: url("./font/HelveticaNeueCyr-Medium.ttf") format("woff");
+    font-weight: normal;
+}
+
+.check-box-container {
+    width: 296px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 34px;
+}
+
+.check-box-img {
+    width: 166px;
+    height: 151px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 0;
+    right: 0;
+    transform: translate(10px, -10px);
+    display: none;
+    background: #F2C200;
+    border-radius: 50px;
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    top: 50%;
+    left: 50%;
+    border: solid rgb(255, 255, 255);
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    display: none;
+}
+
+.quiz-header {
+    margin-top: 29px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    font-family: "HelveticaNeueCyr";
+    text-align: center;
+    /* font-family: -apple-s/ystem, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif */
+}
+
+.input-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+input[type=radio]:checked+div {
+    border: 1px solid #F2C200;
+}
+
+input[type=radio]:checked+div .circle {
+    display: block;
+}
+
+input[type=radio]:checked+div .circle::before {
+    display: block;
+}
+
+.wixard-footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 24px 0 37px;
+    align-items: flex-end;
+}
+
+.progress-container {
+    width: 249px;
+    height: 45px;
+}
+
+#counter {
+    color: #F2C200;
+}
+
+.wizard-ready-btn {
+    color: #8D8D8D;
+    margin-right: 12px;
+}
+
+.wizard-buttons {
+    width: 183px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.next {
+    background: #ffffff;
+    border: 1px solid #444444;
+    color: #444444;
+    border-radius: 100px;
+    width: 123px;
+    height: 40px;
+    font-family: HelveticaNeueCyr;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    background: #F2C200;
+    color: #000000;
+    border: none;
+    margin-left: 20px;
+}
+
+.prev-btn {
+    width: 40%;
+    height: 2px;
+    background-color: #C4C4C4;
+    position: relative;
+    margin: 0 auto;
+}
+
+.previous {
+    width: 40px;
+    border-radius: 100px;
+    height: 40px;
+    border: 1px solid #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous:hover .prev-btn {
+    background-color: #F2C200;
+}
+
+.previous:hover {
+    border: 1px solid #F2C200;
+}
+
+.prev-btn::after {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background-color: inherit;
+    transform: rotate(45deg);
+    left: -2px;
+    top: 4px;
+}
+
+.prev-btn::before {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    width: 80%;
+    height: 2px;
+    transform: rotate(-45deg);
+    left: -2px;
+    top: -4px;
+}
+
+.wizard-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 34px 29px 27px;
+}

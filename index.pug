@@ -1,0 +1,74 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    link(href='assets/css/main.css' rel='stylesheet')
+    link(href='dist/css/jquery.wizzy.css' rel='stylesheet')
+    link(rel='stylesheet' href='./nice-select.css')
+    link(rel='stylesheet' href='./editionalStyle.css')
+.wz-wrapper.wizzy
+    .wz-inner
+        .wz-body
+            .wz-step
+                h3.quiz-header Данную анкету заполняет
+                .check-box-container
+                    input#abiturient.input-hidden(type='radio' name='emotion')
+                    .check-box-img
+                        span.circle
+                        label(for='abiturient')
+                            img(src='./images/abiturient.png' alt="I'm sad")
+                            // <span>Абируриент</span>
+                    input#parent.input-hidden(type='radio' name='emotion')
+                    .check-box-img
+                        span.circle
+                        label(for='parent')
+                            img(src='./images/parent.png' alt="I'm happy")
+                            // <span>Родитель</span>
+            .wz-step
+                h3.quiz-header Меня интересует учебное направление
+                select
+                        option(data-display='Select') Nothing
+                        option(value='1') Some option
+                        option(value='2') Another option
+                        option(value='3') A disabled option
+                        option(value='4') Potato
+                        option(value='4') Potato
+                        option(value='4') Potato
+                        option(value='4') Potato
+                        option(value='4') Potato
+            .wz-step
+                p
+                    | A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls
+                    | like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
+            .wz-step
+                p
+                    | One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed
+                    | and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
+            .wz-step
+                p 5.
+            .wz-step
+                p 6
+            .wz-step
+                p 7
+        .wizard-footer
+            .wz-header
+                div
+                    span.wizard-ready-btn
+                        |Готово:
+                    span#counter
+                        |
+                nav
+                    - let progress = 1
+                    while progress < 8
+                        a(href="#")
+                        - progress++;
+            .wz-navigator
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+script(src='dist/js/jquery.wizzy.js')
+script(src='assets/js/script.js')
+script(src='./jquery.nice-select.min.js')
+script.
+    $(document).ready(function() {
+    $('select').niceSelect();
+    });
