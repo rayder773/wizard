@@ -84,8 +84,8 @@
 
                 if (step >= 0 && step < step_count) {
                     if (action === 'next') {
-                        // const count = ((step + 1) / (step_count - 1) * 100).toFixed();
-                        // console.log(count)
+                        // const count = document.getElementById('data')
+                        // console.log(count.value)
                         step_status[step++] = 1;
                         if (step_status[step] === 0) {
                             step_status[step] = 1;

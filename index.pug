@@ -1,3 +1,9 @@
+
+mixin select(arr, id)
+    select(id= id)
+        each val in arr
+            option= val
+        
 doctype html
 head
     meta(charset='UTF-8')
@@ -6,51 +12,121 @@ head
     link(href='assets/css/main.css' rel='stylesheet')
     link(href='dist/css/jquery.wizzy.css' rel='stylesheet')
     link(rel='stylesheet' href='./nice-select.css')
+    link(rel="stylesheet" href="./datepicker.min.css")
     link(rel='stylesheet' href='./editionalStyle.css')
 .wz-wrapper.wizzy
     .wz-inner
         .wz-body
+            //- .wz-step
+            //-     h3.quiz-header Данную анкету заполняет:
+            //-     .check-box-container
+            //-         input#abiturient.input-hidden(type='radio' name='emotion')
+            //-         .check-box-img
+            //-             span.circle
+            //-             label(for='abiturient')
+            //-                 img(src='./images/abiturient.png' alt="I'm sad")
+            //-                 // <span>Абируриент</span>
+            //-         input#parent.input-hidden(type='radio' name='emotion')
+            //-         .check-box-img
+            //-             span.circle
+            //-             label(for='parent')
+            //-                 img(src='./images/parent.png' alt="I'm happy")
+            //-                 // <span>Родитель</span>
+            //- .wz-step
+            //-     h3.quiz-header Меня интересует учебное направление:
+            //-     +select(['Архитектура и строительство',
+            //-             'Естественные науки',
+            //-             'Здоровье и спорт',
+            //-             'Искусство, культура и СМИ',
+            //-             'История, общество и политика',
+            //-             'Компьютерные науки и технологии',
+            //-             'Математика',
+            //-             'Машиностроение',
+            //-             'Медицина',
+            //-             'Образование, философия и религия',
+            //-             'Право',
+            //-             'Психология',
+            //-             'Экономика и бизнес',
+            //-             'Языки и культуры',
+            //-             'Другое'
+            //-             ])
+            //- .wz-step
+                
+            //- .wz-step
+            //-     h3.quiz-header Степень образования: 
+            //-     div.wizard-small-header Выберете один из предложенных вариантов
+            //-     .check-box-btn-container
+            //-         input#bakalavr.input-hidden(type='radio' name='emotion')
+            //-         label(for='bakalavr')
+            //-             div.bakalavr-btn Бакалавр
+            //-         input#magistr.input-hidden(type='radio' name='emotion')
+            //-         label(for='magistr')
+            //-             div.magistr-btn Магистратура
+            //- .wz-step
+            //-     h3.quiz-header Меня интересует учебное направление:
+            //-     +select(['01.02.2020',
+            //-             '01.09.2020',
+            //-             '01.02.2021',
+            //-             '01.09.2021',
+            //-             '01.02.2022',
+            //-             '01.09.2022',
+            //-             'Не знаю',
+            //-             ], 'wizard-select-2')
+            //- .wz-step
+            //-     h3.quiz-header На каком языке хотели бы учиться?
+            //-     +select(['Только на немецком языке',
+            //-             'Только на английском языке',
+            //-             'Подходит и немецкий, и английский язык',
+            //-             ], 'wizard-select-3')
+            //- .wz-step
+            //-     h3.quiz-header На каком языке хотели бы учиться?
+            //-     +select(['Не определился',
+            //-             'Вeнcкий Главный Унивepcитeт',
+            //-             'Вeнcкий Экономический Унивepcитeт',
+            //-             'Вeнcкий Медицинский Унивepcитeт',
+            //-             'Вeнcкий Технический Унивepcитeт',
+            //-             'Вeнcкий Ветеринарный Унивepcитeт',
+            //-             'Вeнcкий Аграрный  Унивepcитeт',
+            //-             'Венский университет прикладных искусств',
+            //-             'Венская академия изобразительных искусств',
+            //-             'Венский Университет музыки и исполнительского искусства',
+            //-             'Университет Зигмунда Фрейда',
+            //-             'Webster',
+            //-             'Университет MODUL',
+            //-             'Бизнес школа Lauder',
+            //-             'Грац главный университет Карла и Франца',
+            //-             'Грац Технический университет',
+            //-             'Грац Медицинский университет',
+            //-             'Грац Университет прикладных наук Joanneum',
+            //-             'Грац Университет искусств',
+            //-             'Университет Кеплера',
+            //-             'Университет искусств в Линце',
+            //-             'Университет прикладных наук Krems',
+            //-             'Дунайский университет',
+            //-             'Университет прикладных наук Kufstein',
+            //-             'Международный колледж туризма и менеджмента',
+            //-             'Горный университет Leoben',
+            //-             'Инсбрук Университет имени Леопольда и Франца',
+            //-             'Инсбрук Медицинский университет',
+            //-             'Инсбрук Университет менеджмента',
+            //-             'Университет Зальцбурга',
+            //-             'Зальцбург Университет прикладных наук',
+            //-             'Зальцбург Консерватория',
+            //-             'Зальцбург Бизнес школа',
+            //-             'Частный медицинский университет Paracelsus',
+            //-             'Другой'
+            //-             ], 'wizard-select-4')
+            //- .wz-step
+            //-     h3.quiz-header По стоимости учебы я рассматриваю:
+            //-         +select(['только государственные ВУЗы <span class="wizard-red-text">(746€ в семестр)</span> ',
+            //-                 'частные ВУЗы <span class="wizard-red-text">(от 7.500€ в семестр)</span>',
+            //-                 'Рассмотрю все варианты',
+            //-                 ], 'wizard-select-5')
             .wz-step
-                h3.quiz-header Данную анкету заполняет
-                .check-box-container
-                    input#abiturient.input-hidden(type='radio' name='emotion')
-                    .check-box-img
-                        span.circle
-                        label(for='abiturient')
-                            img(src='./images/abiturient.png' alt="I'm sad")
-                            // <span>Абируриент</span>
-                    input#parent.input-hidden(type='radio' name='emotion')
-                    .check-box-img
-                        span.circle
-                        label(for='parent')
-                            img(src='./images/parent.png' alt="I'm happy")
-                            // <span>Родитель</span>
-            .wz-step
-                h3.quiz-header Меня интересует учебное направление
-                select
-                        option(data-display='Select') Nothing
-                        option(value='1') Some option
-                        option(value='2') Another option
-                        option(value='3') A disabled option
-                        option(value='4') Potato
-                        option(value='4') Potato
-                        option(value='4') Potato
-                        option(value='4') Potato
-                        option(value='4') Potato
-            .wz-step
-                p
-                    | A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls
-                    | like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.
-            .wz-step
-                p
-                    | One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed
-                    | and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
-            .wz-step
-                p 5.
-            .wz-step
-                p 6
-            .wz-step
-                p 7
+                h3.quiz-header Дата рождения абитуриента
+                .wizard-calendar-container
+                    input(data-toggle="datepicker" id='birthday' placeholder="dd/mm/yyyy")
+                    img(src='./images/Calendar.png')
         .wizard-footer
             .wz-header
                 div
@@ -68,7 +144,12 @@ script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
 script(src='dist/js/jquery.wizzy.js')
 script(src='assets/js/script.js')
 script(src='./jquery.nice-select.min.js')
+script(src='./datepicker.js')
 script.
     $(document).ready(function() {
-    $('select').niceSelect();
+        $('select').niceSelect();
+        $('[data-toggle="datepicker"]').datepicker({
+            autoHide: true,
+        });
+        
     });
