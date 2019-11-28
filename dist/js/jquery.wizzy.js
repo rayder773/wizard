@@ -1,3 +1,5 @@
+
+
 (function($) {
 
     $.fn.wizzy = function(options) {
@@ -84,23 +86,54 @@
 
                 if (step >= 0 && step < step_count) {
                     if (action === 'next') {
-                        if (elem[0].textContent.match('E-mail абитуриента') == 'E-mail абитуриента') {
-                            // let isValid = ($('#emailInput').val().match(/.+?\@.+/g) || []).length === 1;
-                            // if (!isValid) {
-                            //     $('#emailInput').addClass("wizard-invalid-input");
-                            //     return false;
-                            // } else {
-                            //     $('#emailInput').removeClass("wizard-invalid-input");
-                            // }
-                            var regExp = /^([\w\.\+]{1,})([^\W])(@)([\w]{1,})(\.[\w]{1,})+$/;
+                        // if (elem[0].textContent.match('E-mail абитуриента') == 'E-mail абитуриента') {
+                        //     // let isValid = ($('#emailInput').val().match(/.+?\@.+/g) || []).length === 1;
+                        //     // if (!isValid) {
+                        //     //     $('#emailInput').addClass("wizard-invalid-input");
+                        //     //     return false;
+                        //     // } else {
+                        //     //     $('#emailInput').removeClass("wizard-invalid-input");
+                        //     // }
+                        //     var regExp = /^([\w\.\+]{1,})([^\W])(@)([\w]{1,})(\.[\w]{1,})+$/;
 
-                            $('#emailInput').on('keyup', function() {
-                                console.log($(this).val())
-                                regExp.test($(this).val()) ? $(this).removeClass('wizard-invalid-input') : $(this).addClass('wizard-invalid-input');
+                        //     $('#emailInput').on('keyup', function() {
+                        //         console.log($(this).val())
+                        //         regExp.test($(this).val()) ? $(this).removeClass('wizard-invalid-input') : $(this).addClass('wizard-invalid-input');
+                        //     });
+                        //     return false
+
+                        // }
+                        // console.log(elem)
+                        const value = elem[0].outerText;
+                        const phoneReg = 'Номер телефона абитуриента';
+                        const emailReg = 'E-mail абитуриента'
+                        if(value.match(phoneReg) == phoneReg) {
+                            const phoneNumber = $('#telephone');
+                            console.log(phoneNumber[0].value.length)
+
+                            let isValidPhone = phoneNumber[0].value.length >= 13;
+                            
+                            isValidPhone ? $('#telephone').removeClass('wizard-invalid-input') : $('#telephone').addClass('wizard-invalid-input');
+                            // phoneNumber.addEventListener('keyup', console.log('hello'))
+                            $('#telephone').on('keyup', function() {
+                                console.log('hello')
+                                isValidPhone = phoneNumber[0].value.length >= 13;
+                            
+                                isValidPhone ? $('#telephone').removeClass('wizard-invalid-input') : $('#telephone').addClass('wizard-invalid-input');
                             });
+                            return false;
+                        } else if(value.match(emailReg) == emailReg) {
+                            let isValid = ($('#emailInput').val().match(/.+?\@.+/g) || []).length === 1;
+                            isValid ? $('#emailInput').removeClass('wizard-invalid-input') : $('#emailInput').addClass('wizard-invalid-input');
+                                $('#emailInput').on('keyup', function() {
+                                    console.log('hello')
+                                    isValid = ($('#emailInput').val().match(/.+?\@.+/g) || []).length === 1;
+                                    isValid ? $(this).removeClass('wizard-invalid-input') : $(this).addClass('wizard-invalid-input');
+                                });
                             return false
-
                         }
+                   
+                        // return false;
                         step_status[step++] = 1;
                         if (step_status[step] === 0) {
                             step_status[step] = 1;

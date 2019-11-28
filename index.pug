@@ -120,7 +120,7 @@ head
             //-             ], 'wizard-select-4')
             //- .wz-step
             //-     h3.quiz-header По стоимости учебы я рассматриваю:
-            //-         +select(['только государственные ВУЗы <span class="wizard-red-text">(746€ в семестр)</span> ' 
+            //-         +select(['только государственные ВУЗы <span class="wizard-red-text">(746€ в семестр)</span> ',
             //-                 'частные ВУЗы <span class="wizard-red-text">(от 7.500€ в семестр)</span>',
             //-                 'Рассмотрю все варианты',
             //-                 ], 'wizard-select-5')
@@ -130,15 +130,99 @@ head
             //-         input(data-toggle="datepicker" id='birthday' placeholder="dd/mm/yyyy")
             //-         img(src='./images/Calendar.png')
             //- .wz-step
-            //-     h3.quiz-header По стоимости учебы я рассматриваю:
-            //-         +select(['только государственные ВУЗы <span class="wizard-red-text">(746€ в семестр)</span> ' 
-            //-                 'частные ВУЗы <span class="wizard-red-text">(от 7.500€ в семестр)</span>',
-            //-                 'Рассмотрю все варианты',
-            //-                 ], 'wizard-select-5')
+            //-     h3.quiz-header Мне подходит жильё следующей категории:
+            //-         +select(['2-х местное (санузел и кухня в блоке на несколько комнат) — <span class="wizard-red-text">от 280€</span>',
+            //-                 '2-х местное (индивидуальный санузел и кухня) — <span class="wizard-red-text">от 320€</span>',
+            //-                 'Одноместное (санузел и кухня в блоке на несколько комнат) — <span class="wizard-red-text">от 400€</span>',
+            //-                 'Одноместное (индивидуальный санузел и кухня) — <span class="wizard-red-text">от 550€</span>',
+            //-                 'Апартаменты <span class="wizard-red-text">от 750€</span>',
+            //-                 ], 'wizard-select-6')
             //- .wz-step
-            //-     h3.quiz-header Номер телефона абитуриента
-            //-     .wizard-tel-container
-            //-         <input maxlength="10" type="tel" class="tel" placeholder="Введите номер" pattern="\d*" x-autocompletetype="tel" id="telephone">
+            //-     h3.quiz-header На учебу и проживание в Австрии я планирую тратить:
+            //-         +select(['до 500€/месяц - до 6.000 в год',
+            //-                 'до 800€/месяц - до 9.600 в год',
+            //-                 '850-1.200€/месяц - 10.-14.000 в год',
+            //-                 '1.250-1.500€/месяц - 15.-18.000 в год',
+            //-                 'больше 1.500€/месяц - от 18.000 в год',
+            //-                 ], 'wizard-select-7')
+            //- .wz-step
+            //-     h3.quiz-header Официальный доход семьи:
+            //-         +select(['ниже 1.000 € в месяц',
+            //-                 '1.000 - 2.000€ в месяц',
+            //-                 '2.000 - 3.000€ в месяц',
+            //-                 'выше 3.000€ в месяц',
+            //-                 ], 'wizard-select-8')
+            //- .wz-step
+            //-     h3.quiz-header Учеба в школе
+            //-         +select(['Учусь в школе: 9-й класс или ниже',
+            //-                 'Учусь в школе: 10-й класс',
+            //-                 'Учусь в школе: 11-й класс',
+            //-                 'Получен аттестат о полном среднем образовании (11 классов)',
+            //-                 ], 'wizard-select-9')
+            //- .wz-step
+            //-     h3.quiz-header Страна выдачи школьного аттестата
+            //-         +select(['РФ',
+            //-                 'Европейский Союз',
+            //-                 'Украина',
+            //-                 'Беларусь',
+            //-                 'Казахстан',
+            //-                 'Армения',
+            //-                 'Узбекистан',
+            //-                 'Азербайджан',
+            //-                 'Грузия',
+            //-                 'Таджикистан',
+            //-                 'Кыргызстан',
+            //-                 'Туркменистан',
+            //-                 'Другое'
+            //-                 ], 'wizard-select-10')
+            //- .wz-step
+            //-     h3.quiz-header Учеба в университете
+            //-         +select(['Не учусь в университете',
+            //-                 'Учусь в университете - 1-й курс',
+            //-                 'Учусь в университете - 2-й курс',
+            //-                 'Учусь в университете - 3-й курс',
+            //-                 'Учусь в университете - 4-й курс',
+            //-                 'Учусь в университете - 5-й курс',
+            //-                 'Получен диплом бакалавра',
+            //-                 'Получен диплом специалиста/магистра',
+            //-                 ], 'wizard-select-11')
+            //- .wz-step
+            //-     h3.quiz-header Знание немецкого языка
+            //-         +select(['Нулевой',
+            //-                 'А1',
+            //-                 'А2',
+            //-                 'B1',
+            //-                 'B2',
+            //-                 'C1',
+            //-                 'Уровень не известен',
+            //-                 ], 'wizard-select-12')
+            //- .wz-step
+            //-     h3.quiz-header Знание английского языка
+            //-         +select(['Ниже B2 - IELTS 6.0 - TOEFL 87',
+            //-                 'B2 - IELTS 6.0 - TOEFL 87',
+            //-                 'C1 - IELTS 7.0 - TOEFL 100',
+            //-                 'Уровень не известен',
+            //-                 ], 'wizard-select-13')
+            //- .wz-step
+            //-     h3.quiz-header Гражданство
+            //-         +select(['РФ',
+            //-                 'Европейский Союз',
+            //-                 'Украина',
+            //-                 'Беларусь',
+            //-                 'Казахстан',
+            //-                 'Армения',
+            //-                 'Узбекистан',
+            //-                 'Азербайджан',
+            //-                 'Грузия',
+            //-                 'Таджикистан',
+            //-                 'Кыргызстан',
+            //-                 'Туркменистан',
+            //-                 'Другое'
+            //-                 ], 'wizard-select-14')
+            .wz-step
+                h3.quiz-header Номер телефона абитуриента
+                .wizard-tel-container
+                    <input maxlength="10" type="tel" class="tel" placeholder="Введите номер" pattern="\d*" x-autocompletetype="tel" id="telephone">
             .wz-step
                 h3.quiz-header E-mail абитуриента
                 .wizard-tel-container
@@ -148,7 +232,7 @@ head
                         type= "email"
                         class= "tel"
                     )
-                    
+
 
         .wizard-footer
             .wz-header
@@ -159,7 +243,7 @@ head
                         |
                 nav
                     - let progress = 1
-                    while progress < 8
+                    while progress < 14
                         a(href="#")
                         - progress++;
             .wz-navigator
@@ -170,9 +254,9 @@ script(src='./jquery.nice-select.min.js')
 script(src='./datepicker.js')
 script(src='./js/intlTelInput-jquery.js')
 script(src="./vendor/jquery.caret.js")
-<script src="lib/jquery.mobilePhoneNumber.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+script(src="lib/jquery.mobilePhoneNumber.js")
+script(src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js")
+script(src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js")
 
 script.
     $(document).ready(function() {
@@ -196,13 +280,13 @@ script.
             success: "valid"
         });
         $("#emailInput").validate({
-                                rules: {
-                                    field: {
-                                        required: true,
-                                        email: true
-                                    }
-                                }
-                            });
+            rules: {
+                field: {
+                    required: true,
+                    email: true
+                }
+            }
+        });
     });
 
 
