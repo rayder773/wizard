@@ -14,6 +14,259 @@
   <div class="wz-inner">
     <div class="wz-body">
       <div class="wz-step">
+        <h3 class="quiz-header">Данную анкету заполняет:</h3>
+        <div class="check-box-container">
+          <input class="input-hidden wizard-check-btn" id="abiturient" type="radio" name="emotio">
+          <div class="check-box-img"><span class="circle"></span>
+            <label for="abiturient"><img src="./images/abiturient.png" alt="I'm sad">
+              <!-- <span>Абируриент</span>-->
+            </label>
+          </div>
+          <input class="input-hidden wizard-check-btn" id="parent" type="radio" name="emotio">
+          <div class="check-box-img"><span class="circle"></span>
+            <label for="parent"><img src="./images/parent.png" alt="I'm happy">
+              <!-- <span>Родитель</span>-->
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Меня интересует учебное направление:</h3>
+        <select>
+          <option>Архитектура и строительство</option>
+          <option>Естественные науки</option>
+          <option>Здоровье и спорт</option>
+          <option>Искусство, культура и СМИ</option>
+          <option>История, общество и политика</option>
+          <option>Компьютерные науки и технологии</option>
+          <option>Математика</option>
+          <option>Машиностроение</option>
+          <option>Медицина</option>
+          <option>Образование, философия и религия</option>
+          <option>Право</option>
+          <option>Психология</option>
+          <option>Экономика и бизнес</option>
+          <option>Языки и культуры</option>
+          <option>Другое</option>
+        </select>
+      </div>
+      <div class="wz-step">
+        <div class="with-wizard-textarea">
+          <h3 class="quiz-header">Желаемая специальность:</h3>
+          <textarea class="wiazrd-textarea" name="" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Степень образования: </h3>
+        <div class="wizard-small-header">Выберете один из предложенных вариантов</div>
+        <div class="check-box-btn-container">
+          <input class="input-hidden wizard-check-img" id="bakalavr" type="radio" name="emotions">
+          <div>
+            <label for="bakalavr">
+              <div class="bakalavr-btn">Бакалавр</div>
+            </label>
+          </div>
+          <input class="input-hidden wizard-check-img" id="magistr" type="radio" name="emotions">
+          <div>
+            <label for="magistr">
+              <div class="magistr-btn">Магистратура</div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Меня интересует учебное направление:</h3>
+        <select id="wizard-select-2">
+          <option>01.02.2020</option>
+          <option>01.09.2020</option>
+          <option>01.02.2021</option>
+          <option>01.09.2021</option>
+          <option>01.02.2022</option>
+          <option>01.09.2022</option>
+          <option>Не знаю</option>
+        </select>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">На каком языке хотели бы учиться?</h3>
+        <select id="wizard-select-3">
+          <option>Только на немецком языке</option>
+          <option>Только на английском языке</option>
+          <option>Подходит и немецкий, и английский язык</option>
+        </select>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">В какой ВУЗ Вы хотите поступить?</h3>
+        <select id="wizard-select-4">
+          <option>Не определился</option>
+          <option>Вeнcкий Главный Унивepcитeт</option>
+          <option>Вeнcкий Экономический Унивepcитeт</option>
+          <option>Вeнcкий Медицинский Унивepcитeт</option>
+          <option>Вeнcкий Технический Унивepcитeт</option>
+          <option>Вeнcкий Ветеринарный Унивepcитeт</option>
+          <option>Вeнcкий Аграрный  Унивepcитeт</option>
+          <option>Венский университет прикладных искусств</option>
+          <option>Венская академия изобразительных искусств</option>
+          <option>Венский Университет музыки и исполнительского искусства</option>
+          <option>Университет Зигмунда Фрейда</option>
+          <option>Webster</option>
+          <option>Университет MODUL</option>
+          <option>Бизнес школа Lauder</option>
+          <option>Грац главный университет Карла и Франца</option>
+          <option>Грац Технический университет</option>
+          <option>Грац Медицинский университет</option>
+          <option>Грац Университет прикладных наук Joanneum</option>
+          <option>Грац Университет искусств</option>
+          <option>Университет Кеплера</option>
+          <option>Университет искусств в Линце</option>
+          <option>Университет прикладных наук Krems</option>
+          <option>Дунайский университет</option>
+          <option>Университет прикладных наук Kufstein</option>
+          <option>Международный колледж туризма и менеджмента</option>
+          <option>Горный университет Leoben</option>
+          <option>Инсбрук Университет имени Леопольда и Франца</option>
+          <option>Инсбрук Медицинский университет</option>
+          <option>Инсбрук Университет менеджмента</option>
+          <option>Университет Зальцбурга</option>
+          <option>Зальцбург Университет прикладных наук</option>
+          <option>Зальцбург Консерватория</option>
+          <option>Зальцбург Бизнес школа</option>
+          <option>Частный медицинский университет Paracelsus</option>
+          <option>Другой</option>
+        </select>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">По стоимости учебы я рассматриваю:
+          <select id="wizard-select-5">
+            <option>только государственные ВУЗы &lt;span class=&quot;wizard-red-text&quot;&gt;(746€ в семестр)&lt;/span&gt;</option>
+            <option>частные ВУЗы &lt;span class=&quot;wizard-red-text&quot;&gt;(от 7.500€ в семестр)&lt;/span&gt;</option>
+            <option>Рассмотрю все варианты</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Мне подходит жильё следующей категории:
+          <select id="wizard-select-6">
+            <option>2-х местное (санузел и кухня в блоке на несколько комнат) — &lt;span class=&quot;wizard-red-text&quot;&gt;от 280€&lt;/span&gt;</option>
+            <option>2-х местное (индивидуальный санузел и кухня) — &lt;span class=&quot;wizard-red-text&quot;&gt;от 320€&lt;/span&gt;</option>
+            <option>Одноместное (санузел и кухня в блоке на несколько комнат) — &lt;span class=&quot;wizard-red-text&quot;&gt;от 400€&lt;/span&gt;</option>
+            <option>Одноместное (индивидуальный санузел и кухня) — &lt;span class=&quot;wizard-red-text&quot;&gt;от 550€&lt;/span&gt;</option>
+            <option>Апартаменты &lt;span class=&quot;wizard-red-text&quot;&gt;от 750€&lt;/span&gt;</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">На учебу и проживание в Австрии я планирую тратить:
+          <select id="wizard-select-7">
+            <option>до 500€/месяц - до 6.000 в год</option>
+            <option>до 800€/месяц - до 9.600 в год</option>
+            <option>850-1.200€/месяц - 10.-14.000 в год</option>
+            <option>1.250-1.500€/месяц - 15.-18.000 в год</option>
+            <option>больше 1.500€/месяц - от 18.000 в год</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Официальный доход семьи:
+          <select id="wizard-select-8">
+            <option>ниже 1.000 € в месяц</option>
+            <option>1.000 - 2.000€ в месяц</option>
+            <option>2.000 - 3.000€ в месяц</option>
+            <option>выше 3.000€ в месяц</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Учеба в школе
+          <select id="wizard-select-9">
+            <option>Учусь в школе: 9-й класс или ниже</option>
+            <option>Учусь в школе: 10-й класс</option>
+            <option>Учусь в школе: 11-й класс</option>
+            <option>Получен аттестат о полном среднем образовании (11 классов)</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Страна выдачи школьного аттестата
+          <select id="wizard-select-10">
+            <option>РФ</option>
+            <option>Европейский Союз</option>
+            <option>Украина</option>
+            <option>Беларусь</option>
+            <option>Казахстан</option>
+            <option>Армения</option>
+            <option>Узбекистан</option>
+            <option>Азербайджан</option>
+            <option>Грузия</option>
+            <option>Таджикистан</option>
+            <option>Кыргызстан</option>
+            <option>Туркменистан</option>
+            <option>Другое</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Учеба в университете
+          <select id="wizard-select-11">
+            <option>Не учусь в университете</option>
+            <option>Учусь в университете - 1-й курс</option>
+            <option>Учусь в университете - 2-й курс</option>
+            <option>Учусь в университете - 3-й курс</option>
+            <option>Учусь в университете - 4-й курс</option>
+            <option>Учусь в университете - 5-й курс</option>
+            <option>Получен диплом бакалавра</option>
+            <option>Получен диплом специалиста/магистра</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Знание немецкого языка
+          <select id="wizard-select-12">
+            <option>Нулевой</option>
+            <option>А1</option>
+            <option>А2</option>
+            <option>B1</option>
+            <option>B2</option>
+            <option>C1</option>
+            <option>Уровень не известен</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Знание английского языка
+          <select id="wizard-select-13">
+            <option>Ниже B2 - IELTS 6.0 - TOEFL 87</option>
+            <option>B2 - IELTS 6.0 - TOEFL 87</option>
+            <option>C1 - IELTS 7.0 - TOEFL 100</option>
+            <option>Уровень не известен</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Дата рождения абитуриента</h3>
+        <div class="wizard-calendar-container">
+          <input data-toggle="datepicker" id="birthday" placeholder="dd/mm/yyyy"><img src="./images/Calendar.png">
+        </div>
+      </div>
+      <div class="wz-step">
+        <h3 class="quiz-header">Гражданство
+          <select id="wizard-select-14">
+            <option>РФ</option>
+            <option>Европейский Союз</option>
+            <option>Украина</option>
+            <option>Беларусь</option>
+            <option>Казахстан</option>
+            <option>Армения</option>
+            <option>Узбекистан</option>
+            <option>Азербайджан</option>
+            <option>Грузия</option>
+            <option>Таджикистан</option>
+            <option>Кыргызстан</option>
+            <option>Туркменистан</option>
+            <option>Другое</option>
+          </select>
+        </h3>
+      </div>
+      <div class="wz-step">
         <h3 class="quiz-header">Имя, Фамилия абитуриента</h3>
         <div class="wizard-tel-container">
           <input class="tel" placeholder="Боря Моисеев" type="text">
