@@ -70,17 +70,28 @@
     left: -9999px;
 }
 
-input[type=radio]:checked+div {
+.wizard-check-btn:checked+div {
     border: 1px solid #F2C200;
 }
 
-input[type=radio]:checked+div .circle {
+.wizard-check-btn:checked+div .circle {
     display: block;
 }
 
-input[type=radio]:checked+div .circle::before {
+.wizard-check-btn:checked+div .circle::before {
     display: block;
 }
+
+.wizard-check-img:checked+div label div {
+    border: none;
+    color: #000000;
+    background: #F2C200;
+}
+
+
+/* #magistr:checked+div label .wizard-chaked-btn {
+    background: red;
+} */
 
 .wixard-footer {
     margin-top: 30px;
@@ -215,6 +226,7 @@ input[type=radio]:checked+div .circle::before {
 .magistr-btn:active,
 .bakalavr-btn:active {
     border: none;
+    color: #000000;
     background: #F2C200;
 }
 
@@ -293,4 +305,14 @@ input[type=radio]:checked+div .circle::before {
 .wizard-invalid-input {
     border: 1px red solid;
     color: red;
+}
+
+.with-wizard-textarea {
+    display: flex;
+    flex-direction: column;
+}
+
+.wiazrd-textarea {
+    margin: 16px 14%;
+    resize: none;
 }
