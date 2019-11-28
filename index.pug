@@ -3,7 +3,7 @@ mixin select(arr, id)
     select(id= id)
         each val in arr
             option= val
-        
+
 doctype html
 head
     meta(charset='UTF-8')
@@ -13,7 +13,9 @@ head
     link(href='dist/css/jquery.wizzy.css' rel='stylesheet')
     link(rel='stylesheet' href='./nice-select.css')
     link(rel="stylesheet" href="./datepicker.min.css")
+    link(rel="stylesheet" href="./css/intlTelInput.css")
     link(rel='stylesheet' href='./editionalStyle.css')
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
 .wz-wrapper.wizzy
     .wz-inner
         .wz-body
@@ -51,7 +53,7 @@ head
             //-             'Другое'
             //-             ])
             //- .wz-step
-                
+
             //- .wz-step
             //-     h3.quiz-header Степень образования: 
             //-     div.wizard-small-header Выберете один из предложенных вариантов
@@ -118,15 +120,36 @@ head
             //-             ], 'wizard-select-4')
             //- .wz-step
             //-     h3.quiz-header По стоимости учебы я рассматриваю:
-            //-         +select(['только государственные ВУЗы <span class="wizard-red-text">(746€ в семестр)</span> ',
+            //-         +select(['только государственные ВУЗы <span class="wizard-red-text">(746€ в семестр)</span> ' 
             //-                 'частные ВУЗы <span class="wizard-red-text">(от 7.500€ в семестр)</span>',
             //-                 'Рассмотрю все варианты',
             //-                 ], 'wizard-select-5')
+            //- .wz-step
+            //-     h3.quiz-header Дата рождения абитуриента
+            //-     .wizard-calendar-container
+            //-         input(data-toggle="datepicker" id='birthday' placeholder="dd/mm/yyyy")
+            //-         img(src='./images/Calendar.png')
+            //- .wz-step
+            //-     h3.quiz-header По стоимости учебы я рассматриваю:
+            //-         +select(['только государственные ВУЗы <span class="wizard-red-text">(746€ в семестр)</span> ' 
+            //-                 'частные ВУЗы <span class="wizard-red-text">(от 7.500€ в семестр)</span>',
+            //-                 'Рассмотрю все варианты',
+            //-                 ], 'wizard-select-5')
+            //- .wz-step
+            //-     h3.quiz-header Номер телефона абитуриента
+            //-     .wizard-tel-container
+            //-         <input maxlength="10" type="tel" class="tel" placeholder="Введите номер" pattern="\d*" x-autocompletetype="tel" id="telephone">
             .wz-step
-                h3.quiz-header Дата рождения абитуриента
-                .wizard-calendar-container
-                    input(data-toggle="datepicker" id='birthday' placeholder="dd/mm/yyyy")
-                    img(src='./images/Calendar.png')
+                h3.quiz-header E-mail абитуриента
+                .wizard-tel-container
+                    input(
+                        placeholder= "Александр Иванов"
+                        id= "emailInput"
+                        type= "email"
+                        class= "tel"
+                    )
+                    
+
         .wizard-footer
             .wz-header
                 div
@@ -145,11 +168,41 @@ script(src='dist/js/jquery.wizzy.js')
 script(src='assets/js/script.js')
 script(src='./jquery.nice-select.min.js')
 script(src='./datepicker.js')
+script(src='./js/intlTelInput-jquery.js')
+script(src="./vendor/jquery.caret.js")
+<script src="lib/jquery.mobilePhoneNumber.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
 script.
     $(document).ready(function() {
         $('select').niceSelect();
         $('[data-toggle="datepicker"]').datepicker({
             autoHide: true,
         });
-        
+        $("#telephone").intlTelInput({
+            separateDialCode: true,
+            formatOnDisplay:true,
+            initialCountry:"ua",
+            onlyCountries: ['ua', 'ru'],
+        });
+        var input = $('[type=tel]')
+            input.mobilePhoneNumber({allowPhoneWithoutPrefix:'+1'});
+            input.bind('country.mobilePhoneNumber',function(e, country) {
+            $('.country').text(country ||'')
+        })
+        jQuery.validator.setDefaults({
+            debug: true,
+            success: "valid"
+        });
+        $("#emailInput").validate({
+                                rules: {
+                                    field: {
+                                        required: true,
+                                        email: true
+                                    }
+                                }
+                            });
     });
+
+

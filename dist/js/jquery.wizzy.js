@@ -84,8 +84,23 @@
 
                 if (step >= 0 && step < step_count) {
                     if (action === 'next') {
-                        // const count = document.getElementById('data')
-                        // console.log(count.value)
+                        if (elem[0].textContent.match('E-mail абитуриента') == 'E-mail абитуриента') {
+                            // let isValid = ($('#emailInput').val().match(/.+?\@.+/g) || []).length === 1;
+                            // if (!isValid) {
+                            //     $('#emailInput').addClass("wizard-invalid-input");
+                            //     return false;
+                            // } else {
+                            //     $('#emailInput').removeClass("wizard-invalid-input");
+                            // }
+                            var regExp = /^([\w\.\+]{1,})([^\W])(@)([\w]{1,})(\.[\w]{1,})+$/;
+
+                            $('#emailInput').on('keyup', function() {
+                                console.log($(this).val())
+                                regExp.test($(this).val()) ? $(this).removeClass('wizard-invalid-input') : $(this).addClass('wizard-invalid-input');
+                            });
+                            return false
+
+                        }
                         step_status[step++] = 1;
                         if (step_status[step] === 0) {
                             step_status[step] = 1;

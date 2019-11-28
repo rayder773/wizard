@@ -7,15 +7,16 @@
   <link href="dist/css/jquery.wizzy.css" rel="stylesheet">
   <link rel="stylesheet" href="./nice-select.css">
   <link rel="stylesheet" href="./datepicker.min.css">
-  <link rel="stylesheet" href="./editionalStyle.css">
+  <link rel="stylesheet" href="./css/intlTelInput.css">
+  <link rel="stylesheet" href="./editionalStyle.css"><link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
 </head>
 <div class="wz-wrapper wizzy">
   <div class="wz-inner">
     <div class="wz-body">
       <div class="wz-step">
-        <h3 class="quiz-header">Дата рождения абитуриента</h3>
-        <div class="wizard-calendar-container">
-          <input data-toggle="datepicker" id="birthday" placeholder="dd/mm/yyyy"><img src="./images/Calendar.png">
+        <h3 class="quiz-header">E-mail абитуриента</h3>
+        <div class="wizard-tel-container">
+          <input class="tel" placeholder="Александр Иванов" id="emailInput" type="email">
         </div>
       </div>
     </div>
@@ -34,12 +35,38 @@
 <script src="assets/js/script.js"></script>
 <script src="./jquery.nice-select.min.js"></script>
 <script src="./datepicker.js"></script>
+<script src="./js/intlTelInput-jquery.js"></script>
+<script src="./vendor/jquery.caret.js"></script><script src="lib/jquery.mobilePhoneNumber.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 <script>
   $(document).ready(function() {
       $('select').niceSelect();
       $('[data-toggle="datepicker"]').datepicker({
           autoHide: true,
       });
-      
+      $("#telephone").intlTelInput({
+          separateDialCode: true,
+          formatOnDisplay:true,
+          initialCountry:"ua",
+          onlyCountries: ['ua', 'ru'],
+      });
+      var input = $('[type=tel]')
+          input.mobilePhoneNumber({allowPhoneWithoutPrefix:'+1'});
+          input.bind('country.mobilePhoneNumber',function(e, country) {
+          $('.country').text(country ||'')
+      })
+      jQuery.validator.setDefaults({
+          debug: true,
+          success: "valid"
+      });
+      $("#emailInput").validate({
+                              rules: {
+                                  field: {
+                                      required: true,
+                                      email: true
+                                  }
+                              }
+                          });
   });
 </script>
