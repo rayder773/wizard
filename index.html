@@ -12,11 +12,19 @@
 </head>
 <div class="wz-wrapper wizzy">
   <div class="wz-inner">
+    <div class="popup" onclick="myFunction()"><span class="popuptext" id="myPopup">
+        <div class="popup-top"><img src="img/popup-smile.png" alt="edu-vienna">
+          <div class="popup-top-text-container">
+            <p class="popup-bold-text">Александр Соловых</p>
+            <p class="popup-light-text">Директор Education in Vienna</p>
+          </div>
+        </div>
+        <div class="popup-bottom">Whether its a driving tour, a cruise or a bus, leaf viewing is a great way to spend a fall vacation. a great way to spend a fall vacation. great way to spend</div></span></div>
     <div class="wz-body">
       <div class="wz-step">
         <h3 class="quiz-header">Данную анкету заполняет:</h3>
         <div class="check-box-container">
-          <input class="input-hidden wizard-check-btn" id="abiturient" type="radio" name="emotio">
+          <input class="input-hidden wizard-check-btn" id="abiturient" type="radio" name="emotio" checked>
           <div class="check-box-img"><span class="circle"></span>
             <label for="abiturient"><img src="./images/abiturient.png" alt="I'm sad">
               <!-- <span>Абируриент</span>-->
@@ -60,7 +68,7 @@
         <h3 class="quiz-header">Степень образования: </h3>
         <div class="wizard-small-header">Выберете один из предложенных вариантов</div>
         <div class="check-box-btn-container">
-          <input class="input-hidden wizard-check-img" id="bakalavr" type="radio" name="emotions">
+          <input class="input-hidden wizard-check-img" id="bakalavr" type="radio" name="emotions" checked>
           <div>
             <label for="bakalavr">
               <div class="bakalavr-btn">Бакалавр</div>
@@ -146,7 +154,7 @@
       <div class="wz-step">
         <h3 class="quiz-header">Мне подходит жильё следующей категории:
           <select id="wizard-select-6">
-            <option>2-х местное (санузел и кухня в блоке на несколько комнат) — &lt;span class=&quot;wizard-red-text&quot;&gt;от 280€&lt;/span&gt;</option>
+            <option>&lt;span&gt;2-х местное (санузел и кухня в блоке на несколько комнат)&lt;/span&gt; — &lt;span class=&quot;wizard-red-text&quot;&gt;от 280€&lt;/span&gt;</option>
             <option>2-х местное (индивидуальный санузел и кухня) — &lt;span class=&quot;wizard-red-text&quot;&gt;от 320€&lt;/span&gt;</option>
             <option>Одноместное (санузел и кухня в блоке на несколько комнат) — &lt;span class=&quot;wizard-red-text&quot;&gt;от 400€&lt;/span&gt;</option>
             <option>Одноместное (индивидуальный санузел и кухня) — &lt;span class=&quot;wizard-red-text&quot;&gt;от 550€&lt;/span&gt;</option>
@@ -278,8 +286,27 @@
       </div>
       <div class="wz-step">
         <h3 class="quiz-header">E-mail абитуриента</h3>
-        <div class="wizard-tel-container">
+        <div class="wizard-tel-container wizard-tel-container-email">
           <input class="tel" placeholder="youremail@gmail.com" id="emailInput" type="email">
+          <div class="wizard-private-policy-container">
+            <input class="input-hidden" id="private-policy" type="checkbox">
+            <div>
+              <label for="private-policy" id="wizard-private-policy-label">
+                <div class="wizard-policy-checkbox"></div><span>C</span><a href="#">политикой конфиденциальности</a><span>ознакомлен(а)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wz-step">
+        <div class="wizard-final-container">
+          <div class="wizard-final-left">
+            <div class="wizard-thanks"><span class="wizard-thanks-header">Cпасибо</span><img src="./img/wizard-hi.png"></div>
+            <div class="wizard-thanks-text">Благодарим за Вашу заявку. Пока данные обрабатываются, Вы можете бесплатно скачать нашу заметку: "7 важнейших шагов для поступления в Австрию"</div>
+            <div class="wizard-thanks-btn"><a href="./nice-select.css" download="7 Важнейших шагов">Cкачать</a></div>
+            <div class="wizard-thanks-footer">Education in Vienna</div>
+          </div>
+          <div class="wizard-final-right"><img src="./img/7steps.png" alt="7 важных шагов для поступления в Австрию"></div>
         </div>
       </div>
     </div>
@@ -293,6 +320,17 @@
     </div>
   </div>
 </div>
+<script>
+  var popup = document.getElementById("myPopup");
+  function myFunction() {
+      popup.classList.toggle("show")
+  }
+  document.body.addEventListener('click', function(e) {
+      if(popup.classList.value.includes('show') && e.target.className != 'popup') {
+          popup.classList.remove('show')
+      }
+  })
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="dist/js/jquery.wizzy.js"></script>
 <script src="assets/js/script.js"></script>
@@ -332,5 +370,6 @@
               }
           }
       });
+  
   });
 </script>

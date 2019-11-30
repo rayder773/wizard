@@ -187,3 +187,9 @@
 .no-csspointerevents .nice-select.open .list {
     display: block;
 }
+
+@media screen and (max-width: 767px) {
+    .nice-select .list {
+        width: 329px !important;
+    }
+}

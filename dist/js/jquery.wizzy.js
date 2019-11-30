@@ -11,6 +11,7 @@
             let elem = $(this);
             let nav = elem.find('.wz-header nav');
             let navigator = elem.find('.wz-navigator');
+            let footer = elem.find('.wizard-footer');
             let content = elem.find('.wz-inner');
 
             let btnNext = '<a href="#" class="btn next" data-action="next">Далее <i class="fas fa-angle-right"></i></a>';
@@ -106,13 +107,14 @@
                                 return false;
                             }
                         } else if (value.match(emailReg) == emailReg) {
+                            const isCheked = $('#private-policy').is(':checked');
                             let isValid = ($('#emailInput').val().match(/.+?\@.+/g) || []).length === 1;
                             isValid ? $('#emailInput').removeClass('wizard-invalid-input') : $('#emailInput').addClass('wizard-invalid-input');
                             $('#emailInput').on('keyup', function() {
                                 isValid = ($('#emailInput').val().match(/.+?\@.+/g) || []).length === 1;
                                 isValid ? $(this).removeClass('wizard-invalid-input') : $(this).addClass('wizard-invalid-input');
                             });
-                            if (!isValid) return false;
+                            if (!isValid || !isCheked) return false;
                         }
 
                         step_status[step++] = 1;
@@ -138,12 +140,13 @@
              */
             function render() {
                 navigator.html('');
+                // footer.html('');
 
                 if (step === 0) {
                     btnBack = '<a href="#" id="prev" class="previous"><div class="prev-btn"></div></a>';
                     navigator.append(btnBack, btnNext);
                 } else if (step === step_count - 1) {
-                    navigator.append(btnBack + btnFinish);
+                    $('.wz-header').remove();
                 } else {
                     btnBack = '<a href="#" id="prev" class="btn previous" data-action="back"><div class="prev-btn"></div></a>';
                     navigator.append(btnBack + btnNext);

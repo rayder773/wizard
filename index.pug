@@ -16,13 +16,23 @@ head
     link(rel="stylesheet" href="./css/intlTelInput.css")
     link(rel='stylesheet' href='./editionalStyle.css')
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+    //- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 .wz-wrapper.wizzy
     .wz-inner
+        .popup(onclick="myFunction()")
+            span(class="popuptext" id="myPopup")
+                .popup-top
+                    img(src="img/popup-smile.png", alt="edu-vienna")
+                    .popup-top-text-container
+                        p.popup-bold-text Александр Соловых
+                        p.popup-light-text Директор Education in Vienna
+                .popup-bottom Whether its a driving tour, a cruise or a bus, leaf viewing is a great way to spend a fall vacation. a great way to spend a fall vacation. great way to spend
         .wz-body
+
             .wz-step
                 h3.quiz-header Данную анкету заполняет:
                 .check-box-container
-                    input#abiturient.input-hidden.wizard-check-btn(type='radio' name='emotio')
+                    input#abiturient.input-hidden.wizard-check-btn(type='radio' name='emotio' checked)
                     .check-box-img
                         span.circle
                         label(for='abiturient')
@@ -66,7 +76,7 @@ head
                 h3.quiz-header Степень образования: 
                 div.wizard-small-header Выберете один из предложенных вариантов
                 .check-box-btn-container
-                    input#bakalavr.input-hidden.wizard-check-img(type="radio" name='emotions')
+                    input#bakalavr.input-hidden.wizard-check-img(type="radio" name='emotions' checked)
                     div
                         label(for='bakalavr')
                             div.bakalavr-btn Бакалавр
@@ -136,7 +146,7 @@ head
                         ], 'wizard-select-5')
             .wz-step
                 h3.quiz-header Мне подходит жильё следующей категории:
-                    +select(['2-х местное (санузел и кухня в блоке на несколько комнат) — <span class="wizard-red-text">от 280€</span>',
+                    +select(['<span>2-х местное (санузел и кухня в блоке на несколько комнат)</span> — <span class="wizard-red-text">от 280€</span>',
                         '2-х местное (индивидуальный санузел и кухня) — <span class="wizard-red-text">от 320€</span>',
                         'Одноместное (санузел и кухня в блоке на несколько комнат) — <span class="wizard-red-text">от 400€</span>',
                         'Одноместное (индивидуальный санузел и кухня) — <span class="wizard-red-text">от 550€</span>',
@@ -243,14 +253,34 @@ head
                     <input maxlength="10" type="tel" class="tel" placeholder="Введите номер" pattern="\d*" x-autocompletetype="tel" id="telephone">
             .wz-step
                 h3.quiz-header E-mail абитуриента
-                .wizard-tel-container
+                .wizard-tel-container.wizard-tel-container-email
                     input(
                         placeholder= "youremail@gmail.com"
                         id= "emailInput"
                         type= "email"
                         class= "tel"
                     )
-
+                    
+                    .wizard-private-policy-container
+                       input#private-policy.input-hidden(type='checkbox')
+                       div
+                            label(for='private-policy' id="wizard-private-policy-label")
+                                div.wizard-policy-checkbox
+                                span C
+                                a(href="#") политикой конфиденциальности
+                                span ознакомлен(а)
+            .wz-step
+                .wizard-final-container
+                    .wizard-final-left
+                        .wizard-thanks
+                            span.wizard-thanks-header Cпасибо
+                            img(src="./img/wizard-hi.png")
+                        .wizard-thanks-text Благодарим за Вашу заявку. Пока данные обрабатываются, Вы можете бесплатно скачать нашу заметку: "7 важнейших шагов для поступления в Австрию"
+                        .wizard-thanks-btn
+                            a(href="./nice-select.css" download="7 Важнейших шагов") Cкачать
+                        .wizard-thanks-footer Education in Vienna
+                    .wizard-final-right
+                        img(src="./img/7steps.png", alt="7 важных шагов для поступления в Австрию")
 
         .wizard-footer
             .wz-header
@@ -265,6 +295,16 @@ head
                         a(href="#")
                         - progress++;
             .wz-navigator
+script.
+    var popup = document.getElementById("myPopup");
+    function myFunction() {
+        popup.classList.toggle("show")
+    }
+    document.body.addEventListener('click', function(e) {
+        if(popup.classList.value.includes('show') && e.target.className != 'popup') {
+            popup.classList.remove('show')
+        }
+    })
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
 script(src='dist/js/jquery.wizzy.js')
 script(src='assets/js/script.js')
@@ -305,6 +345,7 @@ script.
                 }
             }
         });
+
     });
 
 
