@@ -86,7 +86,7 @@
                 if (step >= 0 && step < step_count) {
                     if (action === 'next') {
                         const value = elem[0].innerText;
-                        console.log(elem)
+
                         const phoneReg = 'Номер телефона абитуриента';
                         const emailReg = 'E-mail абитуриента'
                         if (value.match(phoneReg) == phoneReg) {
@@ -108,13 +108,23 @@
                                 return false;
                             }
                         } else if (value.match(emailReg) == emailReg) {
-                            const isCheked = $('#private-policy').is(':checked');
+                            let isCheked = $('#private-policy').is(':checked');
+                            if (!isCheked) {
+                                $('.wizard-private-policy-container').addClass('wizard-check-not-filled')
+                            }
+
                             let isValid = ($('#emailInput').val().match(/.+?\@.+/g) || []).length === 1;
                             isValid ? $('#emailInput').removeClass('wizard-invalid-input') : $('#emailInput').addClass('wizard-invalid-input');
+
                             $('#emailInput').on('keyup', function() {
                                 isValid = ($('#emailInput').val().match(/.+?\@.+/g) || []).length === 1;
                                 isValid ? $(this).removeClass('wizard-invalid-input') : $(this).addClass('wizard-invalid-input');
                             });
+
+                            $('.wizard-private-policy-container').change(function() {
+                                isCheked = $('#private-policy').is(':checked');
+                                isCheked ? $(this).removeClass('wizard-check-not-filled') : $(this).addClass('wizard-check-not-filled')
+                            })
                             if (!isValid || !isCheked) return false;
                         }
 

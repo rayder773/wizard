@@ -565,6 +565,17 @@
     color: #444444;
 }
 
+.wizard-private-policy-container {
+    height: 60px;
+    width: 370px;
+    display: flex;
+    justify-content: center;
+}
+
+.wizard-check-not-filled {
+    outline: 1px red solid;
+}
+
 
 /* Add animation (fade in the popup) */
 
