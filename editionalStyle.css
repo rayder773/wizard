@@ -649,7 +649,7 @@
         height: 557px;
     }
     .wizard-calendar-container {
-        margin: 65px 67px 0;
+        margin: 65px 50px 0;
     }
     .tel {
         width: 297px;
@@ -663,7 +663,7 @@
         content: url('./img/7steps-mob.png');
         position: relative;
         bottom: -54px;
-        left: 58px;
+        left: 43px;
         /* width: 197; */
     }
     .wizard-final-container {
@@ -672,4 +672,14 @@
     /* .wizard-final-right img {
         wi
     } */
+    .wizard-private-policy-label span {
+        font-size: 12px;
+    }
+    .wizard-policy-checkbox {
+        margin-right: 8px;
+    }
+    .quiz-header {
+        font-size: 20px;
+        line-height: 26px;
+    }
 }
