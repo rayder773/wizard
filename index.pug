@@ -9,14 +9,13 @@ head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible' content='ie=edge')
-    link(href='assets/css/main.css' rel='stylesheet')
-    link(href='dist/css/jquery.wizzy.css' rel='stylesheet')
-    link(rel='stylesheet' href='./nice-select.css')
-    link(rel="stylesheet" href="./datepicker.min.css")
+    link(href='css/main.css' rel='stylesheet')
+    link(href='css/jquery.wizzy.css' rel='stylesheet')
+    link(rel='stylesheet' href='./css/nice-select.css')
+    link(rel="stylesheet" href="./css/datepicker.min.css")
     link(rel="stylesheet" href="./css/intlTelInput.css")
     link(rel='stylesheet' href='./editionalStyle.css')
     <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
-    //- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 .wz-wrapper.wizzy
     .wz-inner
         .popup(onclick="myFunction()")
@@ -36,13 +35,13 @@ head
                     .check-box-img
                         span.circle
                         label(for='abiturient' class="wizard-check-description")
-                            img(src='./images/abiturient.png' alt="I'm sad")
+                            img(src='./img/abiturient.png' alt="I'm sad")
                             span Абируриент
                     input#parent.input-hidden.wizard-check-btn(type='radio' name='emotio')
                     .check-box-img
                         span.circle
                         label(for='parent' class="wizard-check-description")
-                            img(src='./images/parent.png' alt="I'm happy")
+                            img(src='./img/parent.png' alt="I'm happy")
                             span Родитель
             .wz-step
                 h3.quiz-header Меня интересует учебное направление:
@@ -222,7 +221,7 @@ head
                 h3.quiz-header Дата рождения абитуриента
                 .wizard-calendar-container
                     input(data-toggle="datepicker" id='birthday' placeholder="dd/mm/yyyy")
-                    img(src='./images/Calendar.png')
+                    img(src='./img/Calendar.png')
             .wz-step
                 h3.quiz-header Гражданство
                     +select(['РФ',
@@ -306,13 +305,13 @@ script.
         }
     })
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-script(src='dist/js/jquery.wizzy.js')
-script(src='assets/js/script.js')
-script(src='./jquery.nice-select.min.js')
-script(src='./datepicker.js')
+script(src='./js/jquery.wizzy.js')
+script(src='./js/script.js')
+script(src='./js/jquery.nice-select.min.js')
+script(src='./js/datepicker.js')
 script(src='./js/intlTelInput-jquery.js')
-script(src="./vendor/jquery.caret.js")
-script(src="lib/jquery.mobilePhoneNumber.js")
+script(src="./js/jquery.caret.js")
+script(src="./js/jquery.mobilePhoneNumber.js")
 script(src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js")
 script(src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js")
 
