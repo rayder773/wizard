@@ -147,6 +147,7 @@
                     navigator.append(btnBack, btnNext);
                 } else if (step === step_count - 1) {
                     $('.wz-header').remove();
+                    $('.popup').remove();
                 } else {
                     btnBack = '<a href="#" id="prev" class="btn previous" data-action="back"><div class="prev-btn"></div></a>';
                     navigator.append(btnBack + btnNext);

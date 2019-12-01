@@ -6,7 +6,7 @@
 
 @font-face {
     font-family: "HelveticaNeueCyr";
-    src: url("./font/HelveticaNeueCyr-Light.woff") format("woff");
+    src: url("./font/HelveticaNeueCyr-Medium.woff") format("woff");
     font-weight: normal;
 }
 
@@ -332,6 +332,10 @@
     height: 18px;
 }
 
+.popup:hover {
+    background-image: url("./img/popup-img-hover.png");
+}
+
 
 /* The actual popup */
 
@@ -341,8 +345,8 @@
     position: absolute;
     z-index: 1;
     left: 43px;
-    width: 295px;
-    height: 141px;
+    width: 263px;
+    height: 119px;
     top: -16px;
     background: #FFFFFF;
     box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.07);
@@ -407,8 +411,8 @@
     text-align: left;
     font-family: HelveticaNeueCyr;
     font-weight: normal;
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 14px;
+    line-height: 18px;
     margin-top: 5px;
     color: #444444;
 }
@@ -546,6 +550,21 @@
     left: 20px;
 }
 
+.wizard-check-description {
+    display: flex;
+    flex-direction: column;
+}
+
+.wizard-check-description span {
+    text-align: center;
+    margin-top: 18px;
+    font-family: HelveticaNeueCyr;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #444444;
+}
+
 
 /* Add animation (fade in the popup) */
 
@@ -595,7 +614,7 @@
         margin-bottom: 26px;
     }
     .popup {
-        bottom: 137px;
+        bottom: 128px;
         right: 34px;
         top: initial;
     }
@@ -626,8 +645,31 @@
     .check-box-btn-container div:first-child {
         margin-bottom: 40px;
     }
-    .current {
-        /* width: 10px;
-        height: 10px; */
+    .wz-inner {
+        height: 557px;
     }
+    .wizard-calendar-container {
+        margin: 65px 67px 0;
+    }
+    .tel {
+        width: 297px;
+        height: 40px;
+    }
+    #telephone {
+        width: 327px;
+        height: 40px;
+    }
+    .wizard-final-right img {
+        content: url('./img/7steps-mob.png');
+        position: relative;
+        bottom: -54px;
+        left: 58px;
+        /* width: 197; */
+    }
+    .wizard-final-container {
+        flex-direction: column;
+    }
+    /* .wizard-final-right img {
+        wi
+    } */
 }

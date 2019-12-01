@@ -35,15 +35,15 @@ head
                     input#abiturient.input-hidden.wizard-check-btn(type='radio' name='emotio' checked)
                     .check-box-img
                         span.circle
-                        label(for='abiturient')
+                        label(for='abiturient' class="wizard-check-description")
                             img(src='./images/abiturient.png' alt="I'm sad")
-                            // <span>Абируриент</span>
+                            span Абируриент
                     input#parent.input-hidden.wizard-check-btn(type='radio' name='emotio')
                     .check-box-img
                         span.circle
-                        label(for='parent')
+                        label(for='parent' class="wizard-check-description")
                             img(src='./images/parent.png' alt="I'm happy")
-                            // <span>Родитель</span>
+                            span Родитель
             .wz-step
                 h3.quiz-header Меня интересует учебное направление:
                 +select(['Архитектура и строительство',
@@ -277,7 +277,7 @@ head
                             img(src="./img/wizard-hi.png")
                         .wizard-thanks-text Благодарим за Вашу заявку. Пока данные обрабатываются, Вы можете бесплатно скачать нашу заметку: "7 важнейших шагов для поступления в Австрию"
                         .wizard-thanks-btn
-                            a(href="./nice-select.css" download="7 Важнейших шагов") Cкачать
+                            a(href="./7_shagov_dlya_postupleniya_v_avstriyu.pdf" download="7 Важнейших шагов") Cкачать
                         .wizard-thanks-footer Education in Vienna
                     .wizard-final-right
                         img(src="./img/7steps.png", alt="7 важных шагов для поступления в Австрию")
