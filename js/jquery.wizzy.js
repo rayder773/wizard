@@ -85,7 +85,8 @@
 
                 if (step >= 0 && step < step_count) {
                     if (action === 'next') {
-                        const value = elem[0].outerText;
+                        const value = elem[0].innerText;
+                        console.log(elem)
                         const phoneReg = 'Номер телефона абитуриента';
                         const emailReg = 'E-mail абитуриента'
                         if (value.match(phoneReg) == phoneReg) {
