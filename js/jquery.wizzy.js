@@ -88,16 +88,18 @@
                         const value = elem[0].innerText;
 
                         const phoneReg = 'Номер телефона абитуриента';
-                        const emailReg = 'E-mail абитуриента'
+                        const emailReg = 'E-mail абитуриента';
+                        const nameReg = 'Имя, Фамилия абитуриента';
+
                         if (value.match(phoneReg) == phoneReg) {
                             const phoneNumber = $('#telephone');
-                            let isValidPhone = phoneNumber[0].value.length >= 13;
+                            let isValidPhone = phoneNumber[0].value.length >= 11;
                             if (!isValidPhone) {
                                 $('#telephone').addClass('wizard-invalid-input');
                             }
                             $('#telephone').on('keyup', function() {
                                 const phoneNumber = $('#telephone');
-                                let isValidPhone = phoneNumber[0].value.length >= 13;
+                                let isValidPhone = phoneNumber[0].value.length >= 11;
                                 if (!isValidPhone) {
                                     $('#telephone').addClass('wizard-invalid-input');
                                 } else {
@@ -126,6 +128,25 @@
                                 isCheked ? $(this).removeClass('wizard-check-not-filled') : $(this).addClass('wizard-check-not-filled')
                             })
                             if (!isValid || !isCheked) return false;
+                        } else if(value.match(nameReg) == nameReg) {
+                            const wizardName = $('#wizard-name');
+                            let isValidName = wizardName[0].value.length >= 1;
+                            if (!isValidName) {
+                                $('#wizard-name').addClass('wizard-invalid-input');
+                            }
+                            $('#wizard-name').on('keyup', function() {
+
+                                const wizardName = $('#wizard-name');
+                                isValidName = wizardName[0].value.length >= 1;
+                                if (!isValidName) {
+                                    $('#wizard-name').addClass('wizard-invalid-input');
+                                } else {
+                                    $('#wizard-name').removeClass('wizard-invalid-input');
+                                }
+                            });
+                            if (!isValidName) {
+                                return false;
+                            }
                         }
 
                         step_status[step++] = 1;

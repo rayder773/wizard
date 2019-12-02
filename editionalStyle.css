@@ -263,6 +263,7 @@
     color: #C4C4C4;
     padding-left: 24px;
     outline: none;
+    box-sizing: border-box;
 }
 
 .wizard-calendar-container {
@@ -272,9 +273,10 @@
 }
 
 .wizard-calendar-container img {
+    box-sizing: border-box;
     position: absolute;
     top: 27%;
-    right: -6%;
+    right: 6%;
 }
 
 .tel {
@@ -298,7 +300,6 @@
     /* padding-left: 30px; */
     font-family: HelveticaNeueCyr;
     font-size: 14px;
-    /* line-height: 20px; */
     color: #C4C4C4;
 }
 
@@ -659,9 +660,6 @@
     .wz-inner {
         height: 557px;
     }
-    .wizard-calendar-container {
-        margin: 65px 50px 0;
-    }
     .tel {
         width: 297px;
         height: 40px;
@@ -692,5 +690,7 @@
     .quiz-header {
         font-size: 20px;
         line-height: 26px;
+        width: 90%; 
+         margin: 29px auto 10px;
     }
 }
