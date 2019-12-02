@@ -296,12 +296,6 @@
     margin-top: 61px;
 }
 
-#emailInput::placeholder {
-    /* padding-left: 30px; */
-    font-family: HelveticaNeueCyr;
-    font-size: 14px;
-    color: #C4C4C4;
-}
 
 .wizard-invalid-input {
     border: 1px red solid;
@@ -578,6 +572,7 @@
 }
 
 
+
 /* Add animation (fade in the popup) */
 
 @-webkit-keyframes fadeIn {
@@ -671,8 +666,7 @@
     .wizard-final-right img {
         content: url('./img/7steps-mob.png');
         position: relative;
-        bottom: -54px;
-        left: 43px;
+        bottom: -41px;
         /* width: 197; */
     }
     .wizard-final-container {
@@ -681,9 +675,13 @@
     /* .wizard-final-right img {
         wi
     } */
-    .wizard-private-policy-label span {
-        font-size: 12px;
+    #wizard-private-policy-label span, a {
+        font-size: 10px;
     }
+
+    /* .wizard-private-policy-label span {
+        font-size: 10px;
+    } */
     .wizard-policy-checkbox {
         margin-right: 8px;
     }
@@ -692,5 +690,14 @@
         line-height: 26px;
         width: 90%; 
          margin: 29px auto 10px;
+    }
+
+    .wizard-final-right {
+        position: initial;
+        display: flex;
+    justify-content: center;
+    }
+    .wizard-private-policy-container {
+        width: 90%;
     }
 }
